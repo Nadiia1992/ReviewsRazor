@@ -1,0 +1,228 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #DBD6D2;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+h1 span {
+    color: chocolate
+}
+
+.full-width-block {
+    display: flex;
+    align-items: center;
+    background-color: #DBD6D2;
+    width: 100%;
+}
+
+.text-side {
+    flex: 1;
+    padding: 0 150px;
+    text-align: center;
+}
+
+    .text-side h1 {
+        font-size: 70px;
+        margin-bottom: 50px;
+        color: brown;
+        font-family: 'Brush Script MT';
+    }
+
+    .text-side p {
+        font-size: 20px;
+        margin-bottom: 50px;
+        color: black;
+        font-family: Courier New, Courier, monospace;
+    }
+
+.image-side {
+    flex: 1;
+}
+
+.navbar-custom {
+    background-color: #35211A;
+}
+
+.image-side img {
+    width: 100%;
+    height: 350px;
+    display: block;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient( to right, transparent 0%, black 40% );
+    mask-image: linear-gradient( to right, transparent 0%, black 40% );
+}
+
+
+.btn.btn-success {
+    background-color: #d4af37;
+    border-color: #d4af37;
+    color: black;
+    margin-left: 86%;
+    margin-top: 10px;
+}
+
+.foto {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+    .foto:hover {
+        transform: scale(1.1);
+    }
+
+
+.review {
+    margin-top: 10px;
+}
+
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .review-header h4 {
+        margin: 0;
+        color: darkred;
+    }
+
+    .review-header span {
+        color: gray;
+    }
+
+.card p {
+    color: black;
+}
+
+.mb-3 {
+    color: white;
+}
+
+.creare-form {
+    background: linear-gradient(to right, #212529, #495057);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.sav-btn {
+    background-color: chocolate;
+    border-color: brown;
+    color: white;
+}
+
+    .sav-btn:hover {
+        background-color: brown;
+        border-color: brown;
+    }
+
+.create-title {
+    color: chocolate;
+    margin-left: 30px;
+}
+
+footer {
+    background-color: #DBD6D2;
+    color: black;
+    border-top: none;
+    text-align: center;
+}
+
+.delete-img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.info-textarea {
+    width: 700px;
+}
+
+.nav-link {
+    color: #DBD6D2;
+    text-decoration: none;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.user-name {
+    color: antiquewhite !important;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    padding-right: 100px;
+}
+
+
+
+.nav-link:hover {
+    color: brown;
+}
+
+.reviews {
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.review {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+    #pagination button {
+        padding: 8px 15px;
+        border: 1px solid #554ed3;
+        border-radius: 5px;
+        background: white;
+        color: #554ed3;
+        cursor: pointer;
+    }
+
+        #pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }

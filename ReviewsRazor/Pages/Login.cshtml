@@ -1,0 +1,41 @@
+﻿@page
+@model ReviewsRazor.Pages.LoginModel
+@{
+    ViewData["Title"] = "Вхід";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+
+}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-lg-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h2 class="card-title text-center mb-4">Вхід в систему</h2>
+                <form asp-action="Login">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="logon.Login" class="form-control" placeholder="Логін" />
+                        <label asp-for="logon.Login">Логін</label>
+                        <span asp-validation-for="logon.Login" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <input asp-for="logon.Password" class="form-control" placeholder="Пароль" />
+                        <label asp-for="logon.Password">Пароль</label>
+                        <span asp-validation-for="logon.Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Увійти</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}   

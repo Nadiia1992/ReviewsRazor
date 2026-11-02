@@ -1,0 +1,82 @@
+﻿@page
+@model ReviewsRazor.Pages.CreateModel
+@{
+    ViewData["Title"] = "Додати відгук";
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - La Pergola </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container">
+                <a style="color:#DBD6D2; font-family:Georgia, serif; font-size: 20px; text-decoration: none;" asp-area="" asp-page="Index">La Pergola</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <span class="user-name">
+                            @HttpContext.Session.GetString("FirstName") @HttpContext.Session.GetString("LastName")
+                        </span>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-page="Logout">Вийти</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <h2 class="create-title">Додати новий відгук</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <form asp-page="Create" method="post" enctype="multipart/form-data" class="creare-form">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Message.Comment" class="form-label fw-bold"></label>
+                            <textarea asp-for="Message.Comment" class="form-control" placeholder="Введіть відгук"></textarea>
+                            <span asp-validation-for="Message.Comment" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label asp-for="Message.Foto" class="form-label fw-bold"></label>
+                            <input name="posterFile" class="form-control" type="file" accept="image/png, image/jpeg" placeholder="Завантажте фото" />
+                            <span asp-validation-for="Message.Foto" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-page="Clients" class="btn btn-light border">Повернутися</a>
+                            <input type="submit" value="Зберегти" class="btn btn-primary px-4 sav-btn" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>
